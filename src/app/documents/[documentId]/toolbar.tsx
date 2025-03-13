@@ -152,7 +152,6 @@ const ListButton = () => {
 }
 
 const LineHeightButton = () => {
- 
     const { editor} = useEditorStore();
 
     const lineHeights = [
@@ -174,7 +173,7 @@ const LineHeightButton = () => {
                 {lineHeights.map(({label, value}) => (
                     <button
                     key={value}
-                    onClick={() => editor?.chain().focus().setHeightLine(value).run()}
+                    //onClick={() => editor?.chain().focus().unsetLineHeight(value).run()}
                     className={cn(
                         "flex items-center gap-x-2 py-1 rounded-sm hover:bg-neutral-200/80",
                         editor?.getAttributes("paragraph").lineHeight === value && "bg-neutral-200/80"
