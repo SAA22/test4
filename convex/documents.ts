@@ -11,7 +11,7 @@ export const getByIds = query({
       const document = await ctx.db.get(id);
 
       if(document){
-        documents.push({id: document._id, name: document.title})
+        documents.push({id: document._id, name: document.title});
       }else{
         documents.push({id, name: "[Removed]"})
       }
