@@ -54,7 +54,12 @@ export const TemplateGallery = () => {
                           >
                               <button
                               disabled={isCreating}
-                              onClick={() =>onTemplateClick(template.label, template.initialContent)} 
+                             // onClick={() =>onTemplateClick(template.label, template.initialContent)} 
+                             onClick={() => {
+                                const initialContent = template.initialContent ?? "default value";  // Folosește o valoare implicită dacă este undefined
+                                onTemplateClick(template.label, initialContent);
+                              }}
+
                               style={{
                                   backgroundImage: `url(${template.imageUrl})`,
                                   backgroundSize: "cover",
